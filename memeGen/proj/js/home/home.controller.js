@@ -39,13 +39,5 @@ function addMemes() {
             id,
             url: `../meme-imgs (square)/${i+1}.jpg`
         })
-    }
-    
+    }    
 }
-
-
-
-
-
-
-
