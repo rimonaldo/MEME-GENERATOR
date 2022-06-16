@@ -13,26 +13,35 @@
     <header>
         <h1>Meme</h1>
     </header>
-  
+
 
     <div class="meme-box">
-       <div class="canvas-box">
-           <canvas onclick="toggleStroke()" class="canvas" width="500" height="500" ></canvas>
-           <canvas onclick="toggleStroke()" class="canvas-bottom" width="500" height="500" ></canvas>
+        <div class="canvas-box">
+            <canvas onclick="strokeOff()" class="canvas" width="500" height="500"></canvas>
+            <canvas onclick="strokeOff()" class="canvas-bottom" width="500" height="500"></canvas>
 
-       </div>
-        
+        </div>
+
 
 
         <div class="actions-box">
-            <input onclick="onInput()" value="" class="txt-input" oninput="setText(value)" type="text" placeholder="Enter text" autofocus>
+            <input onclick="strokeOn()" value="" class="txt-input" oninput="setText(value)" type="text"
+                placeholder="Enter text" autofocus>
             <div class="line-btns">
                 <button onclick="onSetLine('up')" class="action-btn"><span>↑</span></button>
                 <button onclick="onSetLine('down')" class="action-btn"><span>↓</span></button>
                 <button onclick="onAddLine()" class="action-btn"><span>+</span></button>
                 <button onclick="onDeleteLine()" class="action-btn fa fa-solid fa-trash "><span></span></button>
+                <select onchange="setFontSize(value)">
+                    <option value="60">T</option>
+                    <option value="36">36</option>
+                    <option value="40">40</option>
+                    <option value="50">50</option>
+                    <option value="60">60</option>
+                    <option value="70">70</option>
+                </select>
             </div>
-            
+
             <div class="text-btns">
                 <button class="action-btn fa fa-solid fa-font"></button>
                 <button onclick="onAlign('left')" class="action-btn  fa fa-solid fa-ltr"></button>
@@ -40,14 +49,14 @@
                 <button onclick="onAlign('right')" class="action-btn  fa fa-solid fa-rtl"></button>
                 <button class="action-btn  fa fa-solid fa-pallete"></button>
             </div>
-    
+
             <div class="emojis">
-                
+
             </div>
-    
+
             <button class="share-btn"><a href="#"></a></button>
         </div>
-    
+
     </div>
     <script src="js/storage.js"></script>
     <script src="js/home/home.service.js"></script>

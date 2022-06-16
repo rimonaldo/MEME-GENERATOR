@@ -5,6 +5,7 @@ function init() {
     drawImgFromlocal()
     addListeners()
     setImgId()
+    gCtx.textAlign = 'left'
 }
 
 function renderCanvas() {
@@ -38,33 +39,37 @@ function onSetLine(direction) {
 }
 
 function onSetLine(direction){
+
+    _clearStroke()
     _setLine(direction, getLine().text)
-    
+    var { x, y } = getLinePos()
     setInputVal(getLine().text)
-    console.log('text\n', getLine().text);
+    _strokeRect(x, y)  
+    saveMeme()
 }
 
+function setFontSize(size){
+    _clearStroke()
+    var {x,y} = getLinePos()
+    
+    _clearLineTxt(x, y)
+    
+    getLine().size = +size
+    _drawText(getLine().text, x, y)
+    saveMeme()
+}
 
 function onAlign(direction){
     if (direction === 'left') return
     if (direction === 'center') getLine().align = 'center'
     if (direction === 'right') getLine().align = 'right'
 
-
+   
 }
 
 function onDeleteLine() {
 
 }
-
-function onInput() {
-
-    var line = getLine()
-    if (!line.isStroke) toggleStroke()
-    else return
-}
-
-
 
 
 
