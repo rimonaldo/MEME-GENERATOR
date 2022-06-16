@@ -99,15 +99,9 @@ nav ul{
 }
 
 a.fa.fa-solid.fa-upload::before{
-
     content: "\f093";
     color: orange;
     font-size: 5rem;
-    /* position: relative;
-    top: 1rem;
-    border: 1px black solid;
-    padding: 18px; */
-    
 }
 
 
@@ -236,4 +230,20 @@ canvas{
 
 .fa-pallete::before{
     content: "\f53f";
+}
+
+.action-btn.fa-pallete{
+    justify-content: center;
+    position: relative;
+}
+
+.action-btn.fa-pallete input{
+    width: 2em;
+    position: absolute;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    background-color: white;
+
+
 }

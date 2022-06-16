@@ -45,9 +45,7 @@ var gMeme = {
 //--------------------------------------------------------------------
 function setImgId() {
     gMeme.imgId = loadFromStorage('IMGID')
-    console.log(gMeme);
     saveMeme()
-    console.log(loadFromStorage('MEME'));
 }
 
 
@@ -71,22 +69,23 @@ function drawImgFromlocal() {
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
         gCtxBottom.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
-        setText()
+        
+        
+        setText(getLine().text)
+        gMeme.lines.forEach((line)=>{
+            var {x,y} = getLinePos()
 
+            _drawText(line.text, x, y)
+        })
     }
     saveMeme()
 }
 
 function _setLine(direction, text) {
-
-    console.log('meme', loadMeme());
-    console.log();
     if (direction === 'down') {
         gMeme.lineIdx++
     } else gMeme.lineIdx--
     if (gMeme.lineIdx >= gMeme.lines.length || gMeme.lineIdx <= 0) gMeme.lineIdx = 0
-    console.log(gMeme.lineIdx);
-
 
 }
 
@@ -107,7 +106,7 @@ function setText(text = gCurrTxt) {
     // setInputVal(text)
     _drawText(text, x, y)
     saveMeme()
-    console.log(loadFromStorage('MEME'));
+
 }
 
 function setText(text = getLine().text) {
@@ -119,7 +118,7 @@ function setText(text = getLine().text) {
     setInputVal(text)
     _drawText(text, x, y)
     saveMeme()
-    console.log(loadFromStorage('MEME'));
+
 }
 
 function addLine() {
@@ -147,7 +146,7 @@ function onDown(ev) {
     setTextDrag(true)
     gStartPos = pos
     document.body.style.cursor = 'grabbing'
-    // isTextClicked()
+    isTextClicked()
 }
 
 function onMove(ev) {
@@ -255,7 +254,7 @@ function _drawText(text, x, y) {
 function _strokeRect(x, y) {
 
     var size = gMeme.lines[gMeme.lineIdx].size
-    console.log(size);
+
     _drawLine(0, y - (size + 5))
     _drawLine(0, y + size / 2)
 

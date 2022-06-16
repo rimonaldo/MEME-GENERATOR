@@ -13,7 +13,12 @@ function renderCanvas() {
     setText()
 }
 
+function setFontColor(hex){
+    getLine().color = hex 
+    saveMeme()
+    renderCanvas()
 
+}
 
 // add a new line
 function onAddLine() {
@@ -128,7 +133,7 @@ function moveText(dx, dy) {
     var line = getLine()
     // add diff
     var diff = (line.text.length) ? line.text.length * 16 : 160
-    console.log(diff);
+
     x += dx - diff 
     y += dy 
     // sets position in line object pos
