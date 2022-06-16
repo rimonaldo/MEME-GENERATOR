@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+body { 
+    width: 100vw;
+    height: 100vh;
+}
+
+
+header h1{
+    margin-bottom: 3em;
+}
+
+.gallery-container{
+    margin: auto;
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+    grid-template-rows: repeat(auto-fit, 1fr);
+    border: 5px black solid;
+    row-gap: 0.5em;
+    column-gap: 0.5em;
+}
+
+.gallery-img{
+    border: 1px black solid;
+    height: 200px;
+    display: flex;
+}
+
+
+
+
+
+
+.meme-box{
+    /* border: 1px black solid; */
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1010px;
+}
+
+
+.canvas-box{
+    position: relative;
+}
+
+.canvas{
+    position: absolute;
+}
+
+.canvas-bottom{
+    position: relative;
+
+    z-index: -1;
+}
+
+
+
+
+.meme-box{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    /* border: 1px red solid; */
+    justify-content: space-between;
+}
+
+
+
+canvas{
+    border: black 1px solid;
+}
+
+
+
+
+.actions-box{
+    border: 1px black solid;
+    height: 300px;
+    width: 500px;
+
+}
+
+.actions-box input{
+    margin-bottom: 2em;
+    width: 20em;
+    
+}
+
+.action-btn{
+    width: 2em;
+    height: 2em;
+    
+}
+
+.action-btn span{
+    font-size: 2em;
+}
+
+.action-btn.delete{
+   width: 2em; 
+   height: 2em;
+   background-image: url(../../graphics/icons/delete.png);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: contain;
+
+}
+
+.line-btns{
+    margin-bottom: 3em;
+}
+
+@font-face{
+    font-family: fa-solid;
+    src: url(/fonts/fa-solid-900.ttf);
+}
+
+
+.fa.fa-solid::before{
+    font-family: fa-solid;
+    content: "\f2ed";
+    font-size: 1em;
+    margin: auto;
+    position: relative;
+    bottom: 0.5em;
+  
+
+}

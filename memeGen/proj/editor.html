@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body onload="init()">
+    <header>
+        <h1>Meme</h1>
+    </header>
+  
+
+    <div class="meme-box">
+       <div class="canvas-box">
+           <canvas onclick="toggleStroke()" class="canvas" width="500" height="500" ></canvas>
+           <canvas onclick="toggleStroke()" class="canvas-bottom" width="500" height="500" ></canvas>
+
+       </div>
+        
+
+
+        <div class="actions-box">
+            <input onclick="onInput()" value="" class="txt-input" oninput="setText(value)" type="text" placeholder="Enter text" autofocus>
+            <div class="line-btns">
+                <button onclick="onSetLine()" class="action-btn"><span>⇅</span></button>
+                <button onclick="onAddLine()" class="action-btn"><span>+</span></button>
+                <button onclick="onDeleteLine()" class="action-btn fa fa-solid"><span></span></button>
+            </div>
+            
+            <div class="text-btns">
+                <button class="action-btn "></button>
+                <button class="action-btn"></button>
+                <button class="action-btn"></button>
+                <button class="action-btn"></button>
+                <button class="action-btn"></button>
+            </div>
+    
+            <div class="emojis">
+                
+            </div>
+    
+            <button class="share-btn"><a href="#"></a></button>
+        </div>
+    
+    </div>
+    <script src="js/storage.js"></script>
+    <script src="js/home/home.service.js"></script>
+    <script src="js/editor/editor.service.js"></script>
+    <script src="js/editor/editor.controller.js"></script>
+</body>
+
+</html>
