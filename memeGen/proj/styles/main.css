@@ -98,7 +98,7 @@ canvas{
 }
 
 .action-btn span{
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .action-btn.delete{
@@ -123,11 +123,35 @@ canvas{
 
 .fa.fa-solid::before{
     font-family: fa-solid;
-    content: "\f2ed";
     font-size: 1em;
     margin: auto;
     position: relative;
-    bottom: 0.5em;
-  
 
+}
+
+.fa-trash::before{
+    content: "\f2ed";
+}
+
+.fa-font::before{
+    content: "\f031";
+}
+
+
+.fa-ltr::before{
+    content: "\f036";
+}
+
+
+.fa-center::before{
+    content: "\f037";
+}
+
+
+.fa-rtl::before{
+    content: "\f038";
+}
+
+.fa-pallete::before{
+    content: "\f53f";
 }

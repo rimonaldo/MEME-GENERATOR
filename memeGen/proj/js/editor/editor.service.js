@@ -55,8 +55,10 @@ function setImgId() {
 // sets input value --> HTML and MODEL
 function setInputVal(text) {
     var elInput = document.querySelector('.txt-input')
-    getLine().text = elInput.value
     elInput.value = text
+    getLine().text = text
+    saveMeme()
+
 }
 
 
@@ -70,14 +72,21 @@ function drawImgFromlocal() {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
         gCtxBottom.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
         setText()
+        
     }
     saveMeme()
 }
 
-function _setLine(text) {
-    gMeme.lineIdx++
-    if (gMeme.lineIdx >= gMeme.lines.length) gMeme.lineIdx = 0
-    setInputVal(text)
+function _setLine(direction,text) {
+    console.log('meme',loadMeme());
+    console.log();
+    if(direction === 'down'){
+        gMeme.lineIdx++
+    } else gMeme.lineIdx--
+    if (gMeme.lineIdx >= gMeme.lines.length|| gMeme.lineIdx <=0) gMeme.lineIdx = 0
+    console.log(gMeme.lineIdx);
+    
+
 }
 
 var gCurrTxt = loadFromStorage('MEME').lines[gMeme.lineIdx].text
@@ -92,7 +101,7 @@ function setText(text = gCurrTxt) {
     _clearLineTxt(x, y)
 
 
-    setInputVal(text)
+    // setInputVal(text)
     _drawText(text, x, y)
     saveMeme()
     console.log(loadFromStorage('MEME'));
@@ -188,7 +197,7 @@ function saveMeme(meme = gMeme) {
 }
 
 function loadMeme() {
-    loadFromStorage(MEME_KEY)
+    return loadFromStorage(MEME_KEY)
 }
 
 
@@ -198,12 +207,15 @@ function loadMeme() {
 // ------------------------------------------------------
 function toggleStroke() {
     var line = getLine()
+    console.log('line',line);
     var x = line.linePos.x
     var y = line.linePos.y
 
     line.isStroke = !line.isStroke
     !line.isStroke ? _clearStroke(x, y) : _strokeRect(x, y)
 }
+
+
 
 
 function clearCanvas() {
@@ -230,10 +242,12 @@ function _drawText(text, x, y) {
 function _strokeRect(x, y) {
 
     var size = gMeme.lines[gMeme.lineIdx].size
-    gCtx.beginPath();
-    gCtx.rect(0, y - size - 5, gCanvas.width, size * 1.6);
-    gCtx.strokeStyle = 'orange'
-    gCtx.stroke();
+    _drawLine(0 , y - size)
+    _drawLine(0 , y + size/2)
+    // gCtx.beginPath();
+    // gCtx.rect(0, y - size , gCanvas.width, size * 1.6);
+    // gCtx.strokeStyle = 'orange'
+    // gCtx.stroke();
 
 }
 
@@ -253,11 +267,11 @@ function _clearStroke(x, y) {
 
 
 
-function _drawLine(x, y, xEnd = gCanvas.width, yEnd = gCanvas.height) {
-    gCtx.lineWidth = 2;
-    gCtx.moveTo(x, y);
+function _drawLine(x, y, xEnd = gCanvas.width, yEnd = y) {
+    gCtx.lineWidth = 1;
+    gCtx.moveTo(x , y);
     gCtx.lineTo(xEnd, yEnd);
-    gCtx.strokeStyle = 'red';
+    gCtx.strokeStyle = 'orange';
     gCtx.stroke();
 }
 

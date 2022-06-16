@@ -20,21 +20,38 @@ function onAddLine() {
 }
 
 // sets the line the user is editing
-function onSetLine() {
-    var line = getLine()
-    var text = line.text
-    var { x, y } = getLinePos()
-    // _clearStroke(x, y)
-    toggleStroke()
-    _setLine(text)
-    setInputVal(text)
-    if (!line.isStroke) {
-        toggleStroke()
-    } else _clearStroke(x, y)
-    saveMeme()
-    console.log('lineIDX',loadFromStorage('MEME').lineIdx);
+function onSetLine(direction) {
+    // var line = getLine()
+    // var text = line.text
+    // console.log('text\n', line.text);
+    // var { x, y } = getLinePos()
+    // // _clearStroke(x, y)
+    // toggleStroke()
+    // setInputVal(text)
+    // _setLine(direction,text)
+    // if (!line.isStroke) {
+    //     toggleStroke()
+    // } else _clearStroke(x, y)
+
+    // saveMeme()
+
 }
 
+function onSetLine(direction){
+    _setLine(direction, getLine().text)
+    
+    setInputVal(getLine().text)
+    console.log('text\n', getLine().text);
+}
+
+
+function onAlign(direction){
+    if (direction === 'left') return
+    if (direction === 'center') getLine().align = 'center'
+    if (direction === 'right') getLine().align = 'right'
+
+
+}
 
 function onDeleteLine() {
 

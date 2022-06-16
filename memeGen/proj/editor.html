@@ -27,17 +27,18 @@
         <div class="actions-box">
             <input onclick="onInput()" value="" class="txt-input" oninput="setText(value)" type="text" placeholder="Enter text" autofocus>
             <div class="line-btns">
-                <button onclick="onSetLine()" class="action-btn"><span>⇅</span></button>
+                <button onclick="onSetLine('up')" class="action-btn"><span>↑</span></button>
+                <button onclick="onSetLine('down')" class="action-btn"><span>↓</span></button>
                 <button onclick="onAddLine()" class="action-btn"><span>+</span></button>
-                <button onclick="onDeleteLine()" class="action-btn fa fa-solid"><span></span></button>
+                <button onclick="onDeleteLine()" class="action-btn fa fa-solid fa-trash "><span></span></button>
             </div>
             
             <div class="text-btns">
-                <button class="action-btn "></button>
-                <button class="action-btn"></button>
-                <button class="action-btn"></button>
-                <button class="action-btn"></button>
-                <button class="action-btn"></button>
+                <button class="action-btn fa fa-solid fa-font"></button>
+                <button onclick="onAlign('left')" class="action-btn  fa fa-solid fa-ltr"></button>
+                <button onclick="onAlign('center')" class="action-btn  fa fa-solid fa-center"></button>
+                <button onclick="onAlign('right')" class="action-btn  fa fa-solid fa-rtl"></button>
+                <button class="action-btn  fa fa-solid fa-pallete"></button>
             </div>
     
             <div class="emojis">
