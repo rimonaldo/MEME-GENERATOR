@@ -19,7 +19,7 @@ var gMeme = {
     lineIdx: 0,
     lines: [{
         linePos: { x: 20, y: 100 },
-        text: 'Enter Text',
+        text: 'ENTER TEXT',
         size: 60,
         align: 'left',
         color: 'white',
@@ -242,9 +242,9 @@ function _clearLineTxt(x = gCanvas.width, y = gCanvas.height) {
 
 function _drawText(text, x, y) {
     var line = gMeme.lines[gMeme.lineIdx]
-    gCtx.lineWidth = 1
+    gCtx.lineWidth = 3
     gCtx.strokeStyle = gMeme.lines[gMeme.lineIdx].stroke
-    gCtx.font = line.size + 'px Arial'
+    gCtx.font = line.size + 'px Impact'
     gCtx.fillStyle = line.color
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
