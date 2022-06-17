@@ -1,0 +1,280 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+}
+
+body { 
+    width: 99.1vw;
+    height: 100vh;
+    background-color: rgb(12, 11, 14);
+    color: orange;
+}
+
+
+header h1{
+    margin-bottom: 1rem;
+    font-size: 4rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 0.1rem;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: column;  
+}
+
+nav{
+    background-color: rgb(218, 218, 218);   
+    align-items: center;
+}
+
+ul li{
+    all: none;
+    list-style: none;
+    color: black;  
+}
+
+
+ul li:first-child{
+    margin-inline-end: 1em;
+}
+
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+    line-height: 100px;
+}
+
+
+.search-box{
+    display: flex;
+    align-items: center;
+    height: 100px;
+    margin-top: 1rem;
+    /* border-top: 1px white solid; */
+    /* border-bottom: 1px white solid; */
+    margin-bottom: 0.5rem;
+}
+
+.search-bar{
+    margin-inline-start: 1em;
+    /* border: 1px orange solid; */
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 500px;
+}
+
+.search-bar input{
+    height: 2em;
+}
+
+
+
+
+
+.gallery-container{
+    margin: auto;
+    display: grid;
+    width: 60%;
+    grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+    grid-template-rows: repeat(auto-fit, 1fr);
+    border: 5px black solid;
+    row-gap: 0.5em;
+    column-gap: 0.5em;
+
+    margin-bottom: 3rem;
+}
+
+.gallery-img{
+    margin: auto;
+    border: 1px black solid;
+    height: 200px;
+    display: flex;
+    min-width: 200px; 
+}
+
+.gallery-img.fa-upload{
+    width: 200px;
+}
+
+a.fa.fa-solid.fa-upload::before{
+    content: "\f093";
+    color: orange;
+    font-size: 5rem;
+}
+
+
+footer{
+    background-color: lightgray;
+    height: 100px;
+}
+
+
+
+.meme-box{
+    /* border: 1px black solid; */
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1010px;
+}
+
+
+.canvas-box{
+    position: relative;
+}
+
+.canvas{
+    position: absolute;
+}
+
+.canvas-bottom{
+    position: relative;
+
+    z-index: -1;
+}
+
+
+
+
+.meme-box{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    /* border: 1px red solid; */
+    justify-content: space-between;
+}
+
+
+
+canvas{
+    border: black 1px solid;
+}
+
+
+
+
+.actions-box{
+    border: 1px black solid;
+    height: 300px;
+    width: 500px;
+
+}
+
+.actions-box input{
+    margin-bottom: 2em;
+    width: 20em;
+    
+}
+
+.action-btn{
+    width: 2em;
+    height: 2em;
+    
+}
+
+.action-btn span{
+    font-size: 1.5em;
+}
+
+.action-btn.delete{
+   width: 2em; 
+   height: 2em;
+   background-image: url(../../graphics/icons/delete.png);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: contain;
+
+}
+
+.line-btns{
+    margin-bottom: 3em;
+}
+
+@font-face{
+    font-family: fa-solid;
+    src: url(/fonts/fa-solid-900.ttf);
+}
+
+
+.fa.fa-solid::before{
+    font-family: fa-solid;
+    font-size: 1em;
+    margin: auto;
+    position: relative;
+
+}
+
+.fa-trash::before{
+    content: "\f2ed";
+}
+
+.fa-font::before{
+    content: "\f031";
+}
+
+
+.fa-ltr::before{
+    content: "\f036";
+}
+
+
+.fa-center::before{
+    content: "\f037";
+}
+
+
+.fa-rtl::before{
+    content: "\f038";
+}
+
+.fa-pallete::before{
+    content: "\f53f";
+}
+
+.action-btn.fa-pallete{
+    justify-content: center;
+    position: relative;
+}
+
+.action-btn.fa-pallete input{
+    width: 2em;
+    position: absolute;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    background-color: white;
+
+
+}
+
+.upload{
+    position: relative;
+    
+}
+
+
+.upload input{
+    position: absolute;
+    bottom: 0;
+    border: 1px white solid;
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+}
+
+.new-image{
+    width: 200px;
+    margin: auto;
+    display: none;
+ 
+}
+
+.new-image a{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
